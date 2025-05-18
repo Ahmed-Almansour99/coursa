@@ -8,6 +8,10 @@ extension ScreenSize on BuildContext{
     double getHeight({double per =10.00}){
     return (((MediaQuery.sizeOf(this).height)/10) *per);
     }
+    double getShortest({double per =10.00}){
+    return (((MediaQuery.sizeOf(this).shortestSide)/10) *per);
+    }
+    
     double getSafeHeight(){
     return AppBar().preferredSize.height;
     }

@@ -1,4 +1,5 @@
 
+import 'package:coursa/core/text/app_text.dart';
 import 'package:coursa/features/language/language_page.dart';
 
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(body: 
     
-    Image.asset('assets/images/coursa.png',height:context.getHeight(),width: context.getWidth(),fit: BoxFit.contain,)
+    Image.asset(AppText.splashImagePath,height:context.getHeight(),width: context.getWidth(),fit: BoxFit.contain,)
     );
   }
 }

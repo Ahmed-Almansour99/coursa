@@ -1,4 +1,5 @@
 
+import 'package:coursa/core/theme/app_palette.dart';
 import 'package:coursa/features/auth/pages/background_page.dart';
 import 'package:coursa/core/text/app_text.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -59,30 +60,44 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   );
                             },
                           ),
-              
+               
                 // next button and dots here
                 Container(alignment: Alignment(0, 0.95),child: Padding(
                   padding: EdgeInsets.symmetric(horizontal:context.getWidth(per:1.5)),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                     
-                      
-                     
-                      SizedBox(width: context.getWidth(per: 1.6),),
-                      SmoothPageIndicator(controller: _controller, count: 3,effect:  SlideEffect(    
-                    dotColor:  const Color.fromARGB(255, 51, 51, 51),    
-                    activeDotColor:  const Color.fromARGB(255, 241, 60, 60)    
-                ), 
-              ),
-                      
-                      // if not last page
-                      onLastPage == false ?
-                      GestureDetector(onTap: (){_controller.nextPage(duration: Duration(milliseconds: 500), curve: Curves.easeIn);},child: Image.asset('assets/images/next.png',width: context.getWidth(per:2),height: context.getHeight(per: 2)),)
-                      :
-                      //if last page
-                      GestureDetector(onTap: (){ replacementNavigateor(context, BackgroundPage());},child: Image.asset('assets/images/next.png',width: context.getWidth(per: 2),height: context.getHeight(per: 2),),),
-                    ],
-                  ),
+                  child:Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children:[
+    SizedBox(width: context.getWidth(per: 2.2),),
+          SmoothPageIndicator(
+            controller: _controller,
+            count: 3,
+            effect: SlideEffect(
+              dotColor: AppPalette.greylight,
+              activeDotColor: AppPalette.beigeColor,
+              type: SlideType.slideUnder,
+            ),
+          ),GestureDetector(
+            onTap: () {
+              if (onLastPage == false) {
+                _controller.nextPage(
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeIn,
+                );
+              } else {
+                replacementNavigateor(context, BackgroundPage());
+              }
+            },
+            child: Image.asset(
+             context.locale.languageCode == 'ar' ? AppText.inverseNextImagePath:AppText.nextImagePath,
+              width: context.getWidth(per: 2),
+              height: context.getHeight(per: 2),
+            ),
+          ),
+          
+        ]
+)
+
+,
                 ))
                 
                 

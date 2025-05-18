@@ -1,4 +1,7 @@
+import 'package:coursa/core/functions/navigation.dart';
+import 'package:coursa/core/text/app_text.dart';
 import 'package:coursa/core/theme/app_palette.dart';
+import 'package:coursa/features/auth/pages/social_login.dart';
 import 'package:flutter/material.dart';
 
 class CustomContainer extends StatelessWidget {
@@ -15,12 +18,13 @@ class CustomContainer extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppPalette.whiteColor,
             shape: BoxShape.circle,
-            border: Border.all(color: AppPalette.borderColor, width: 2),
-            image: DecorationImage(
-              image: AssetImage("assets/images/facebook.png"),
+            border: Border.all(color: AppPalette.beigeColor, width: 2),
+           
             ),
+             child: IconButton(icon:Image.asset(AppText.facebookImagePath),onPressed: (){pushNavigator(context, SocialLogin(imagepath:  AppText.facebookImagePath));},),
           ),
-        ),
+           
+        
         const SizedBox(width: 10),
         Container(
           height: 50,
@@ -28,10 +32,10 @@ class CustomContainer extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppPalette.whiteColor,
             shape: BoxShape.circle,
-            border: Border.all(color: AppPalette.borderColor, width: 2),
+            border: Border.all(color: AppPalette.beigeColor, width: 2),
             
             ),
-            child: IconButton(icon:Image.asset("assets/images/x.webp"),onPressed: (){},),
+            child: IconButton(icon:Image.asset(AppText.xImagePath),onPressed: (){pushNavigator(context, SocialLogin(imagepath:AppText.xImagePath));},),
           
         ),
         const SizedBox(width: 10),
@@ -41,9 +45,9 @@ class CustomContainer extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppPalette.whiteColor,
             shape: BoxShape.circle,
-            border: Border.all(color: AppPalette.borderColor, width: 2),
-            image: DecorationImage(image: AssetImage("assets/images/google.png")),
+            border: Border.all(color: AppPalette.beigeColor, width: 2),
           ),
+           child: IconButton(icon:Image.asset(AppText.googleImagePath),onPressed: (){pushNavigator(context, SocialLogin(imagepath:AppText.googleImagePath));},),
         ),
       ],
     );

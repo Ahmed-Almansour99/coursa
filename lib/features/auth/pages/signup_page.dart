@@ -3,20 +3,20 @@ import 'package:coursa/core/text/app_text.dart';
 import 'package:coursa/core/theme/app_palette.dart';
 import 'package:coursa/core/widget/custom_elevated_button.dart';
 import 'package:coursa/features/auth/widget/custom_container.dart';
-import 'package:coursa/features/auth/widget/custom_text_field.dart';
+import 'package:coursa/core/widget/custom_text_field.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:coursa/features/controller/controller_page.dart';
 class SignupPage extends StatelessWidget {
    SignupPage({super.key});
-final _signupFormkey = GlobalKey<FormState>();
+final signupFormkey = GlobalKey<FormState>();
   final TextEditingController usernameSignupController =TextEditingController();
   final TextEditingController passwordSignupController =TextEditingController();
   final TextEditingController confirmController =TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: AppPalette.whiteColor,
-      body: Form(key:_signupFormkey ,
+      body: Form(key:signupFormkey ,
         child: Column(
           children: [
             SizedBox(height: 45),
@@ -29,7 +29,7 @@ final _signupFormkey = GlobalKey<FormState>();
   }
   return null;
 } ),
-            CustomTextField(text: AppText.password.tr(),controllers:passwordSignupController,condition:  (value) {
+            CustomTextField(text: AppText.password.tr(),obscureText: true,controllers:passwordSignupController,condition:  (value) {
   if (value == null || value.isEmpty){
     return 'Password is required';
   }else if(value.length < 8 ) {
@@ -49,10 +49,11 @@ final _signupFormkey = GlobalKey<FormState>();
 } ,),
             SizedBox(height: 36),
             CustomElevatedButton(
-              onPressed: () {
-              if (_signupFormkey.currentState!.validate()) {
-    
-    replacementNavigateor(context, ControllerPage());
+              onPressed: () async{
+              if (signupFormkey.currentState!.validate()) {
+    await Future.delayed(Duration(milliseconds: 500));
+    if (!context.mounted) return;
+    replacementNavigateor(context, BottomNavigationController());
   }
               },
               text: AppText.signUp.tr(),

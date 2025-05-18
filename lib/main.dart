@@ -1,7 +1,6 @@
 import 'package:coursa/core/theme/app_theme.dart';
 import 'package:coursa/features/splash/splash_page.dart';
 import 'package:flutter/material.dart';
-//import 'package:shared_preferences/shared_preferences.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 
@@ -11,7 +10,7 @@ void main() async {
  runApp(
     EasyLocalization(
       supportedLocales: [Locale('ar'),Locale('en')],
-      path: 'assets/translations',
+      path: 'lib/core/text/translations',
       fallbackLocale: Locale('en'),
       child: const MainApp(),
     ),

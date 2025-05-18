@@ -19,14 +19,14 @@ class AppTheme {
     
   textTheme: TextTheme(
      titleSmall: TextStyle(color: AppPalette.seconderyText,fontSize: 14),
-    titleMedium: TextStyle(color: AppPalette.seconderyText,fontSize: 16,fontWeight: FontWeight.bold),
+    titleMedium: TextStyle(color: AppPalette.primryText,fontSize: 16,fontWeight: FontWeight.bold),
 titleLarge: TextStyle(color: AppPalette.seconderyText,fontSize: 18,fontWeight: FontWeight.bold),
 labelSmall: TextStyle(color: AppPalette.seconderyText,fontSize: 6),
-labelMedium: TextStyle(color: AppPalette.seconderyText,fontSize: 8),
+labelMedium: TextStyle(color: AppPalette.primryText,fontSize: 8),
 labelLarge: TextStyle(color: AppPalette.seconderyText,fontSize: 11,fontWeight: FontWeight.bold),
-    bodySmall: TextStyle(color:AppPalette.primryText,fontSize: 11),
+    bodySmall: TextStyle(color:AppPalette.seconderyText,fontSize: 11),
     bodyMedium: TextStyle(color:AppPalette.primryText,fontSize: 13),
-    bodyLarge:  TextStyle(color:AppPalette.primryText,fontSize: 16,fontWeight: FontWeight.bold),
+    bodyLarge:  TextStyle(color:AppPalette.seconderyText,fontSize: 16,fontWeight: FontWeight.bold),
    
   ),
     

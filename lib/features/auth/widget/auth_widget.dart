@@ -38,7 +38,8 @@ class AuthWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: [
-                      TabBar(
+                      Container(decoration:BoxDecoration(border: Border.all(color: AppPalette.beigeColor),borderRadius: BorderRadius.all(Radius.circular(context.getWidth(per: 0.61)))),
+                          child:TabBar(
                         dividerHeight: 0,
                         indicatorColor: AppPalette.whiteColor,
                         labelPadding: const EdgeInsets.symmetric(horizontal: 12),
@@ -50,8 +51,11 @@ class AuthWidget extends StatelessWidget {
                         labelColor: AppPalette.whiteColor,
                         indicatorSize: TabBarIndicatorSize.tab,
           
-                        tabs: [Tab(text: AppText.logIn.tr()), Tab(text: AppText.signUp.tr())],
-                      ),
+                        tabs: [
+                               Tab(text: AppText.logIn.tr()),Tab(text: AppText.signUp.tr()) 
+                            ,
+                        ],
+                      ),),
                       Expanded(
                         child: TabBarView(children: [LoginPage(), SignupPage()]),
                       ),
