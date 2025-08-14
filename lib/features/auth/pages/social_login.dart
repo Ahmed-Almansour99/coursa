@@ -38,7 +38,7 @@ SingleChildScrollView(
     ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: context.getWidth(per: 1)),
-                child: CustomTextField(text: AppText.password.tr(),controllers: passwordLoginController,condition: (value) {
+                child: CustomTextField(text: AppText.password.tr(),obscureText: true,controllers: passwordLoginController,condition: (value) {
                     if (value == null || value.isEmpty){
                       return 'Password is required';
                     }else if(value.length < 8 ) {

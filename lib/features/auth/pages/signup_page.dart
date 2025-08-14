@@ -29,7 +29,7 @@ final signupFormkey = GlobalKey<FormState>();
   }
   return null;
 } ),
-            CustomTextField(text: AppText.password.tr(),controllers:passwordSignupController,condition:  (value) {
+            CustomTextField(text: AppText.password.tr(),obscureText: true,controllers:passwordSignupController,condition:  (value) {
   if (value == null || value.isEmpty){
     return 'Password is required';
   }else if(value.length < 8 ) {

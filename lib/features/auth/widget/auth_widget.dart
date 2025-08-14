@@ -52,7 +52,7 @@ class AuthWidget extends StatelessWidget {
                         indicatorSize: TabBarIndicatorSize.tab,
           
                         tabs: [
-                               Tab(text: AppText.logIn),Tab(text: AppText.signUp.tr()) 
+                               Tab(text: AppText.logIn.tr()),Tab(text: AppText.signUp.tr()) 
                             ,
                         ],
                       ),),

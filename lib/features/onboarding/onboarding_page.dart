@@ -34,9 +34,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             itemCount: AppText.onboardingContent.length,
                             controller: _controller,
                             onPageChanged: (index) {
-                  
+                  setState(() {
                     onLastPage = (index == AppText.onboardingContent.length - 1);
-                  
+                  });
                             },
                             itemBuilder: (context, index) {
                   final content = AppText.onboardingContent[index];

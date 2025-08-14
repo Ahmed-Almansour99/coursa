@@ -39,11 +39,14 @@ body: SafeArea(child: Padding(
     return 'Please Enter  Numbers';
   }
   
-  else if(int.tryParse(value) != null ){
-if(value<15){
-  return 'Age is less than required';
-}
+ else if(int.tryParse(value) != null ){
+  int age = int.parse(value);
+  if(age < 15){
+    return 'Age is less than required';
   }
+}
+
+
   return null;
 } ,),
  CustomTextField(text:AppText.natuionalID.tr(),controllers:natuionalIdController ,condition: (value) {
